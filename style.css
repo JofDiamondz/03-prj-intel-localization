@@ -1,0 +1,132 @@
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #003c71;
+  padding: 3rem 1rem 2rem 1rem;
+}
+.hero-logo {
+  width: 180px;
+  margin-bottom: 1rem;
+}
+.hero-slogan {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #fff;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Timeline Cards Grid */
+.timeline-cards-scroll {
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2rem 0;
+  background: #f5f7fa;
+}
+
+.timeline-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0 2rem;
+  scroll-behavior: smooth;
+}
+
+/* Timeline Card */
+.timeline-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  cursor: pointer;
+  min-height: 320px;
+  transition: transform 0.2s;
+  font-family: 'Roboto', Arial, sans-serif;
+  min-width: 300px;
+  max-width: 320px;
+  flex: 0 0 auto;
+}
+.timeline-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s;
+}
+.card-year {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #003c71;
+  color: #fff;
+  padding: 0.4em 1em;
+  border-radius: 2em;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Overlay for details */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 60, 113, 0.95);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: opacity 0.3s;
+  z-index: 3;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.timeline-card:hover .card-overlay,
+.timeline-card:focus-within .card-overlay {
+  opacity: 1;
+}
+.timeline-card:hover img {
+  filter: blur(2px) brightness(0.7);
+}
+.card-overlay h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5rem;
+}
+.card-overlay h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.card-overlay p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Optional: Hide scrollbar for webkit browsers */
+.timeline-cards-scroll::-webkit-scrollbar {
+  display: none;
+}
+.timeline-cards-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

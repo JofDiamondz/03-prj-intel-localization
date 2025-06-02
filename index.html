@@ -5,187 +5,711 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Roboto (closest to Intel One) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+  <!-- Language Selector and Subscribe Button (fixed top-right) -->
+  <div class="position-fixed top-0 start-0 p-3 d-flex align-items-center" style="z-index:1050;">
+    <!-- Subscribe Button on the left -->
+    <button id="subscribeBtn" class="btn btn-primary" type="button" style="min-width: 120px;">
+      <i class="bi bi-envelope-fill me-1"></i>
+      <span data-i18n="subscribe_btn">Subscribe</span>
+    </button>
+  </div>
+  <div class="position-fixed top-0 end-0 p-3" style="z-index:1050;">
+    <!-- Language Dropdown (Bootstrap dropdown, click to open) on the right -->
+    <div class="dropdown lang-dropdown">
+      <button class="btn btn-link p-0 border-0 dropdown-toggle" id="langDropdownBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select language">
+        <i class="bi bi-globe2" style="font-size: 2rem; color: #0071c5;"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="langDropdownBtn" id="langDropdownMenu">
+        <li>
+          <a class="dropdown-item d-flex align-items-center lang-option active" href="#" data-lang="en" data-dir="ltr">
+            <span class="me-2 flag-icon"><img src="https://flagcdn.com/24x18/gb.png" alt="English" width="24" height="18"></span>
+            English
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center lang-option" href="#" data-lang="ar" data-dir="rtl">
+            <span class="me-2 flag-icon"><img src="https://flagcdn.com/24x18/sa.png" alt="Arabic" width="24" height="18"></span>
+            العربية
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center lang-option" href="#" data-lang="de" data-dir="ltr">
+            <span class="me-2 flag-icon"><img src="https://flagcdn.com/24x18/de.png" alt="German" width="24" height="18"></span>
+            Deutsch
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item d-flex align-items-center lang-option" href="#" data-lang="ja" data-dir="ltr">
+            <span class="me-2 flag-icon"><img src="https://flagcdn.com/24x18/jp.png" alt="Japanese" width="24" height="18"></span>
+            日本語
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <!-- Hero Section: Centered Logo and Slogan -->
+  <header class="hero d-flex flex-column align-items-center justify-content-center text-center px-4 my-4">
+    <img src="img/intel-header-logo.svg" alt="Intel Corporation Logo" class="hero-logo mb-3" style="height:64px; width:auto;" />
+    <h1 class="hero-slogan mb-0" data-i18n="slogan">Sustainability Through the Ages</h1>
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
-    <!-- Card 1: 1968 -->
-    <div>
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
-    </div>
+  <section class="timeline-cards-scroll">
+    <div class="timeline-cards">
+      <!-- Card 1: 1968 -->
+      <div class="timeline-card">
+        <img src="img/1.jpg" alt="Intel Founded in 1968" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_1968">1968</h2>
+          <h3 data-i18n="title_1968">Intel Founded</h3>
+          <p data-i18n="desc_1968">
+            Robert Noyce and Gordon Moore rename the newly formed company 
+            NM Electronics to Intel Corporation, laying the foundation for 
+            decades of technological innovation.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_1968">1968</span>
+      </div>
 
-    <!-- Card 2: 1971 -->
-    <div>
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
-    </div>
+      <!-- Card 2: 1971 -->
+      <div class="timeline-card">
+        <img src="img/2.jpg" alt="Intel 4004 Microprocessor 1971" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_1971">1971</h2>
+          <h3 data-i18n="title_1971">First Microprocessor</h3>
+          <p data-i18n="desc_1971">
+            Intel debuts the 4004, the world's first commercial microprocessor, 
+            igniting the microprocessor revolution and propelling the future 
+            of computing devices.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_1971">1971</span>
+      </div>
 
-    <!-- Card 3: 1978 -->
-    <div>
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
-    </div>
+      <!-- Card 3: 1978 -->
+      <div class="timeline-card">
+        <img src="img/3.jpg" alt="Intel 8086 Processor 1978" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_1978">1978</h2>
+          <h3 data-i18n="title_1978">8086 Processor</h3>
+          <p data-i18n="desc_1978">
+            Launch of the 8086 processor, establishing the x86 architecture 
+            that drives countless PCs and servers in the modern era.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_1978">1978</span>
+      </div>
 
-    <!-- Card 4: 1985 -->
-    <div>
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
-    </div>
+      <!-- Card 4: 1985 -->
+      <div class="timeline-card">
+        <img src="img/4.jpg" alt="Intel 386 Processor 1985" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_1985">1985</h2>
+          <h3 data-i18n="title_1985">386 Processor</h3>
+          <p data-i18n="desc_1985">
+            Intel introduces the 386 processor with 32-bit architecture, 
+            ushering in a new era of performance and multitasking for 
+            personal computers.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_1985">1985</span>
+      </div>
 
-    <!-- Card 5: 2006 -->
-    <div>
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
-    </div>
+      <!-- Card 5: 2006 -->
+      <div class="timeline-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8EbEoqILEsKcYsR1XnMmz7CET7NGvfoREJA&s" alt="2006 Peak GHG Emissions" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_2006">2006</h2>
+          <h3 data-i18n="title_2006">Peak GHG Emissions</h3>
+          <p data-i18n="desc_2006">
+            This year marks Intel's highest annual greenhouse gas emissions 
+            for operations. Over subsequent years, Intel invests heavily in 
+            chemical abatement, renewable energy, and energy-efficient 
+            manufacturing to reverse this trend.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_2006">2006</span>
+      </div>
 
-    <!-- Card 6: 2020 -->
-    <div>
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
-    </div>
+      <!-- Card 6: 2020 -->
+      <div class="timeline-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh3V0oTdpgPEZMmcnvNvV6pMKvaXSCNh9_lw&s" alt="2020 RISE Strategy" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_2020">2020</h2>
+          <h3 data-i18n="title_2020">RISE Strategy</h3>
+          <p data-i18n="desc_2020">
+            Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+            Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_2020">2020</span>
+      </div>
 
-    <!-- Card 7: 2022 -->
-    <div>
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
-    </div>
+      <!-- Card 7: 2022 -->
+      <div class="timeline-card">
+        <img src="https://imageio.forbes.com/specials-images/imageserve/625898304a75b7b310243179/Robert-N--Boyce-Building-is-the-world-headquarters-for-Intel-Corporation-in-Silicon/960x0.jpg?format=jpg&width=1440" alt="Intel Net-Zero Commitment 2022" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_2022">2022</h2>
+          <h3 data-i18n="title_2022">Net-Zero By 2040</h3>
+          <p data-i18n="desc_2022">
+            Intel announces its commitment to achieve net-zero greenhouse 
+            gas emissions (Scope 1 and 2) across its global operations 
+            by 2040, building on years of environmental initiatives.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_2022">2022</span>
+      </div>
 
-    <!-- Card 8: 2023 -->
-    <div>
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
-    </div>
+      <!-- Card 8: 2023 -->
+      <div class="timeline-card">
+        <img src="https://www.esgtoday.com/wp-content/uploads/2022/04/Intel-chip.jpg" alt="Intel Renewable Electricity 2023" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_2023">2023</h2>
+          <h3 data-i18n="title_2023">Renewable Electricity</h3>
+          <p data-i18n="desc_2023">
+            The company achieves 99% renewable electricity usage worldwide, 
+            helping to drastically lower carbon emissions and driving progress 
+            toward Intel's long-term sustainability goals.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_2023">2023</span>
+      </div>
 
-    <!-- Card 9: 2024 -->
-    <div>
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <!-- Card 9: 2024 -->
+      <div class="timeline-card">
+        <img src="https://www.nbc4i.com/wp-content/uploads/sites/18/2022/02/intel-grass.jpg?w=1280&h=720&crop=1" alt="Intel Future Vision 2024" />
+        <div class="card-overlay">
+          <h2 data-i18n="year_2024">2024</h2>
+          <h3 data-i18n="title_2024">Future Vision</h3>
+          <p data-i18n="desc_2024">
+            Intel continues to innovate in sustainability, aiming for 
+            industry leadership in climate action, water restoration, 
+            and circular economy practices.
+          </p>
+        </div>
+        <span class="card-year" data-i18n="year_2024">2024</span>
+      </div>
     </div>
   </section>
 
-  <!-- 3-Column Content Section -->
-  <section>
-    <div>
-      
-      <!-- Column 1 -->
-      <div>
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+  <!-- 3-Column Content Section (Bootstrap Grid) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-start shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="me-2" style="font-size:2rem; color:#0071c5;">
+                  <i class="bi bi-bar-chart-line-fill"></i>
+                </span>
+                <h2 class="h5 mb-0" data-i18n="col1_title">RISE Strategy</h2>
+              </div>
+              <p data-i18n="col1_desc">
+                Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+                Intel sets ambitious 2030 goals, including driving industry-wide 
+                progress on climate action, water stewardship, and waste reduction.
+              </p>
+              <a href="#" class="learn-more-link" data-i18n="learn_more">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-start shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="me-2" style="font-size:2rem; color:#0071c5;">
+                  <i class="bi bi-shield-check"></i>
+                </span>
+                <h2 class="h5 mb-0" data-i18n="col2_title">Commitment</h2>
+              </div>
+              <p data-i18n="col2_desc">
+                In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
+                (Scope 1 and 2) by 2040. This commitment builds on decades of 
+                environmental initiatives and partnerships across the semiconductor 
+                industry.
+              </p>
+              <a href="#" class="learn-more-link" data-i18n="learn_more">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 text-start shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="me-2" style="font-size:2rem; color:#0071c5;">
+                  <i class="bi bi-droplet-half"></i>
+                </span>
+                <h2 class="h5 mb-0" data-i18n="col3_title">Water &amp; Waste</h2>
+              </div>
+              <p data-i18n="col3_desc">
+                Intel conserves billions of gallons of water annually and 
+                collaborates with local communities to restore watersheds.
+                Intel also upcycles and recycles materials to reduce waste and 
+                advance a circular economy.
+              </p>
+              <a href="#" class="learn-more-link" data-i18n="learn_more">Learn More</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Column 2 -->
-      <div>
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
-      </div>
-
-      <!-- Column 3 -->
-      <div>
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
-      </div>
-
     </div>
   </section>
 
-  <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
-  </section>
+  <!-- Newsletter Modal -->
+  <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title" id="subscribeModalLabel" data-i18n="modal_title">
+            Learn more about Intel's sustainability project and performance.
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <p data-i18n="modal_subtitle">Subscribe to receive news from INTEL</p>
+          <form id="newsletterForm" novalidate>
+            <div class="mb-2">
+              <label for="subName" class="form-label" data-i18n="modal_name">Name</label>
+              <input type="text" class="form-control" id="subName" required autocomplete="off" aria-required="true">
+            </div>
+            <div class="mb-2">
+              <label for="subLastName" class="form-label" data-i18n="modal_lastname">Last Name</label>
+              <input type="text" class="form-control" id="subLastName" required autocomplete="off" aria-required="true">
+            </div>
+            <div class="mb-2">
+              <label for="subEmail" class="form-label" data-i18n="modal_email">Email</label>
+              <input type="email" class="form-control" id="subEmail" required autocomplete="off" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" aria-required="true" aria-describedby="emailHelp">
+              <div class="invalid-feedback" id="emailHelp" data-i18n="modal_email_invalid">Please enter a valid email address.</div>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" value="" id="subTerms" aria-required="true">
+              <label class="form-check-label" for="subTerms" data-i18n="modal_terms">
+                I agree to the terms and conditions.
+              </label>
+            </div>
+            <button type="submit" id="subSubmit" class="btn btn-primary w-100 mt-2 d-none" data-i18n="modal_submit" aria-live="polite">
+              Submit
+            </button>
+          </form>
+          <div id="subSuccess" class="alert alert-success mt-3 d-none" role="alert" data-i18n="modal_thankyou">
+            Thank you for subscribing!
+          </div>
+          <!-- Add spinner markup inside the modal, after #subSuccess -->
+          <div id="subSpinner" class="d-none text-center mt-3" aria-live="polite">
+            <div class="spinner-border text-primary" role="status" aria-label="Loading"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .lang-dropdown {
+      z-index: 1050;
+    }
+    /* Make sure dropdown is directly under the globe icon with no gap */
+    .lang-dropdown .dropdown-menu {
+      min-width: 180px;
+      padding: 0.25rem 0;
+      position: absolute;
+      right: 0;
+      left: auto;
+      top: calc(100% - 50px) !important; /* Move menu up to be flush with the icon */
+      margin-top: 0 !important;
+      z-index: 1000;
+    }
+    .lang-dropdown.show .dropdown-menu {
+      display: block;
+    }
+    .lang-option {
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-option:hover {
+      background: #e6f0fa !important;
+      color: #0071c5 !important;
+    }
+    .lang-option.active {
+      background: #cce4fa !important;
+      color: #0071c5 !important;
+      font-weight: 600;
+    }
+    .flag-icon img {
+      border-radius: 2px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    }
+    .learn-more-link {
+      color: #0071c5;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .learn-more-link:hover {
+      color: #005a99;
+      text-decoration: underline;
+    }
+    /* Force timeline to stay LTR even in RTL languages */
+    .timeline-cards-scroll,
+    .timeline-cards {
+      direction: ltr !important;
+    }
+    .modal-backdrop.show { opacity: 0.4; }
+    #subscribeModal .modal-content { border-radius: 1rem; }
+    #subSuccess { text-align: center; }
+    /* Add to your <style> section */
+    #subscribeBtn {
+      background-color: #0071c5 !important;
+      border-color: #0071c5 !important;
+      color: #fff;
+    }
+    #subscribeBtn:hover, #subscribeBtn:focus {
+      background-color: #005a99 !important;
+      border-color: #005a99 !important;
+      color: #fff;
+    }
+    .d-flex.align-items-center.position-fixed {
+      flex-direction: row !important;
+      direction: ltr !important; /* Always keep LTR order for buttons */
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal logic
+  var subscribeModalEl = document.getElementById('subscribeModal');
+  var subscribeModal = null;
+  if (window.bootstrap && subscribeModalEl) {
+    subscribeModal = new bootstrap.Modal(subscribeModalEl);
+    document.getElementById('subscribeBtn').addEventListener('click', function() {
+      document.getElementById('newsletterForm').reset();
+      document.getElementById('subSuccess').classList.add('d-none');
+      document.getElementById('subSubmit').classList.add('d-none');
+      subscribeModal.show();
+    });
+
+    // Show modal when any "Learn More" link is clicked
+    document.querySelectorAll('.learn-more-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('newsletterForm').reset();
+        document.getElementById('subSuccess').classList.add('d-none');
+        document.getElementById('subSubmit').classList.add('d-none');
+        subscribeModal.show();
+      });
+    });
+  }
+  // Form validation and submit logic
+  const form = document.getElementById('newsletterForm');
+  const name = document.getElementById('subName');
+  const lastName = document.getElementById('subLastName');
+  const email = document.getElementById('subEmail');
+  const terms = document.getElementById('subTerms');
+  const submitBtn = document.getElementById('subSubmit');
+  const successMsg = document.getElementById('subSuccess');
+  const spinner = document.getElementById('subSpinner');
+
+  function validateForm() {
+    const validName = name.value.trim().length > 0;
+    const validLast = lastName.value.trim().length > 0;
+    const validEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim());
+    const validTerms = terms.checked;
+    if (validName && validLast && validEmail && validTerms) {
+      submitBtn.classList.remove('d-none');
+    } else {
+      submitBtn.classList.add('d-none');
+    }
+  }
+
+  [name, lastName, email, terms].forEach(el => {
+    el.addEventListener('input', validateForm);
+    el.addEventListener('change', validateForm);
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitBtn.classList.add('d-none');
+    successMsg.classList.add('d-none');
+    document.getElementById('subSpinner').classList.remove('d-none');
+    setTimeout(() => {
+      document.getElementById('subSpinner').classList.add('d-none');
+      successMsg.classList.remove('d-none');
+      setTimeout(() => {
+        subscribeModal.hide();
+      }, 2000);
+    }, 5000); // Show spinner for at least 5 seconds
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.lang-option').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelectorAll('.lang-option').forEach(function(opt) {
+            opt.classList.remove('active');
+          });
+          this.classList.add('active');
+          // Change language direction if Arabic is selected
+          const lang = this.getAttribute('data-lang');
+          const dir = this.getAttribute('data-dir');
+          document.documentElement.lang = lang;
+          document.documentElement.dir = dir;
+          translatePage(lang);
+        });
+      });
+      // Initial translation
+      translatePage('en');
+    });
+
+    // Update translation on language change
+    function translatePage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      // Update modal placeholders if needed
+      document.getElementById('subName').setAttribute('placeholder', translations[lang].modal_name || '');
+      document.getElementById('subLastName').setAttribute('placeholder', translations[lang].modal_lastname || '');
+      document.getElementById('subEmail').setAttribute('placeholder', translations[lang].modal_email || '');
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+      document.querySelectorAll('[data-i18n-value]').forEach(function(el) {
+        const key = el.getAttribute('data-i18n-value');
+        if (translations[lang] && translations[lang][key]) {
+          el.value = translations[lang][key];
+        }
+      });
+    }
+  </script>
+
+  <script>
+const translations = {
+  en: {
+    slogan: "Sustainability Through the Ages",
+    year_1968: "1968",
+    title_1968: "Intel Founded",
+    desc_1968: "Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.",
+    year_1971: "1971",
+    title_1971: "First Microprocessor",
+    desc_1971: "Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.",
+    year_1978: "1978",
+    title_1978: "8086 Processor",
+    desc_1978: "Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.",
+    year_1985: "1985",
+    title_1985: "386 Processor",
+    desc_1985: "Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.",
+    year_2006: "2006",
+    title_2006: "Peak GHG Emissions",
+    desc_2006: "This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.",
+    year_2020: "2020",
+    title_2020: "RISE Strategy",
+    desc_2020: "Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.",
+    year_2022: "2022",
+    title_2022: "Net-Zero By 2040",
+    desc_2022: "Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.",
+    year_2023: "2023",
+    title_2023: "Renewable Electricity",
+    desc_2023: "The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.",
+    year_2024: "2024",
+    title_2024: "Future Vision",
+    desc_2024: "Intel continues to innovate in sustainability, aiming for industry leadership in climate action, water restoration, and circular economy practices.",
+    col1_title: "RISE Strategy",
+    col1_desc: "Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, Intel sets ambitious 2030 goals, including driving industry-wide progress on climate action, water stewardship, and waste reduction.",
+    col2_title: "Commitment",
+    col2_desc: "In 2022, Intel pledged to achieve net-zero greenhouse gas emissions (Scope 1 and 2) by 2040. This commitment builds on decades of environmental initiatives and partnerships across the semiconductor industry.",
+    col3_title: "Water & Waste",
+    col3_desc: "Intel conserves billions of gallons of water annually and collaborates with local communities to restore watersheds. Intel also upcycles and recycles materials to reduce waste and advance a circular economy.",
+    learn_more: "Learn More",
+    subscribe_title: "Subscribe to our Newsletter",
+    subscribe_btn: "Subscribe",
+    modal_title: "Learn more about Intel's sustainability project and performance.",
+    modal_subtitle: "Subscribe to receive news from INTEL",
+    modal_name: "Name",
+    modal_lastname: "Last Name",
+    modal_email: "Email",
+    modal_email_invalid: "Please enter a valid email address.",
+    modal_terms: "I agree to the terms and conditions.",
+    modal_submit: "Submit",
+    modal_thankyou: "Thank you for subscribing!"
+  },
+  ar: {
+    slogan: "الاستدامة عبر العصور",
+    year_1968: "١٩٦٨",
+    title_1968: "تأسيس إنتل",
+    desc_1968: "قام روبرت نويس وجوردون مور بإعادة تسمية الشركة الجديدة من NM Electronics إلى إنتل، مما وضع الأساس لعقود من الابتكار التكنولوجي.",
+    year_1971: "١٩٧١",
+    title_1971: "أول معالج دقيق",
+    desc_1971: "تطلق إنتل 4004، أول معالج دقيق تجاري في العالم، مما أشعل ثورة المعالجات الدقيقة ودفع مستقبل أجهزة الحوسبة.",
+    year_1978: "١٩٧٨",
+    title_1978: "معالج 8086",
+    desc_1978: "إطلاق معالج 8086، الذي أسس معمارية x86 التي تشغل العديد من أجهزة الكمبيوتر والخوادم الحديثة.",
+    year_1985: "١٩٨٥",
+    title_1985: "معالج 386",
+    desc_1985: "تقدم إنتل معالج 386 بهندسة 32 بت، مما أطلق عصرًا جديدًا من الأداء وتعدد المهام لأجهزة الكمبيوتر الشخصية.",
+    year_2006: "٢٠٠٦",
+    title_2006: "ذروة انبعاثات الغازات الدفيئة",
+    desc_2006: "شهد هذا العام أعلى انبعاثات سنوية للغازات الدفيئة في عمليات إنتل. على مدى السنوات التالية، استثمرت إنتل بكثافة في تقنيات الحد من الانبعاثات والطاقة المتجددة والتصنيع الفعال للطاقة لعكس هذا الاتجاه.",
+    year_2020: "٢٠٢٠",
+    title_2020: "استراتيجية RISE",
+    desc_2020: "تطلق إنتل استراتيجية RISE (المسؤولية، الشمول، الاستدامة، التمكين) وأهداف 2030، بهدف دفع التقدم الصناعي في العمل المناخي وإدارة المياه وتقليل النفايات.",
+    year_2022: "٢٠٢٢",
+    title_2022: "صفر انبعاثات بحلول 2040",
+    desc_2022: "تعلن إنتل التزامها بتحقيق صافي انبعاثات صفرية (النطاق 1 و2) في عملياتها العالمية بحلول عام 2040، استنادًا إلى سنوات من المبادرات البيئية.",
+    year_2023: "٢٠٢٣",
+    title_2023: "الكهرباء المتجددة",
+    desc_2023: "تصل الشركة إلى استخدام 99٪ من الكهرباء المتجددة عالميًا، مما يساعد على خفض الانبعاثات الكربونية بشكل كبير ودفع التقدم نحو أهداف الاستدامة طويلة الأجل.",
+    year_2024: "٢٠٢٤",
+    title_2024: "رؤية المستقبل",
+    desc_2024: "تواصل إنتل الابتكار في الاستدامة، وتهدف إلى الريادة الصناعية في العمل المناخي واستعادة المياه وممارسات الاقتصاد الدائري.",
+    col1_title: "استراتيجية RISE",
+    col1_desc: "من خلال استراتيجية RISE، تضع إنتل أهدافًا طموحة لعام 2030، بما في ذلك دفع التقدم الصناعي في العمل المناخي وإدارة المياه وتقليل النفايات.",
+    col2_title: "الالتزام",
+    col2_desc: "في عام 2022، تعهدت إنتل بتحقيق صافي انبعاثات صفرية (النطاق 1 و2) بحلول عام 2040. يستند هذا الالتزام إلى عقود من المبادرات البيئية والشراكات عبر صناعة أشباه الموصلات.",
+    col3_title: "المياه والنفايات",
+    col3_desc: "تحافظ إنتل سنويًا على مليارات الجالونات من المياه وتتعاون مع المجتمعات المحلية لاستعادة الأحواض المائية. كما تعيد تدوير المواد لتقليل النفايات وتعزيز الاقتصاد الدائري.",
+    learn_more: "اعرف المزيد",
+    subscribe_title: "اشترك في النشرة الإخبارية",
+    subscribe_btn: "اشترك",
+    modal_title: "تعرف على المزيد حول مشروع واستدامة إنتل.",
+    modal_subtitle: "اشترك لتصلك أخبار إنتل",
+    modal_name: "الاسم",
+    modal_lastname: "اسم العائلة",
+    modal_email: "البريد الإلكتروني",
+    modal_email_invalid: "يرجى إدخال بريد إلكتروني صحيح.",
+    modal_terms: "أوافق على الشروط والأحكام.",
+    modal_submit: "إرسال",
+    modal_thankyou: "شكرًا لاشتراكك!"
+  },
+  de: {
+    slogan: "Nachhaltigkeit im Wandel der Zeit",
+    year_1968: "1968",
+    title_1968: "Intel gegründet",
+    desc_1968: "Robert Noyce und Gordon Moore benennen das neu gegründete Unternehmen von NM Electronics in Intel Corporation um und legen damit den Grundstein für jahrzehntelange technologische Innovationen.",
+    year_1971: "1971",
+    title_1971: "Erster Mikroprozessor",
+    desc_1971: "Intel stellt den 4004 vor, den weltweit ersten kommerziellen Mikroprozessor, der die Mikroprozessor-Revolution einleitet.",
+    year_1978: "1978",
+    title_1978: "8086 Prozessor",
+    desc_1978: "Einführung des 8086-Prozessors, der die x86-Architektur begründet, die zahlreiche PCs und Server antreibt.",
+    year_1985: "1985",
+    title_1985: "386 Prozessor",
+    desc_1985: "Intel stellt den 386-Prozessor mit 32-Bit-Architektur vor und läutet damit eine neue Ära der Leistung und des Multitaskings für PCs ein.",
+    year_2006: "2006",
+    title_2006: "Höchststand der Treibhausgasemissionen",
+    desc_2006: "In diesem Jahr verzeichnet Intel die höchsten jährlichen Treibhausgasemissionen. In den Folgejahren investiert Intel stark in Emissionsminderung, erneuerbare Energien und energieeffiziente Fertigung.",
+    year_2020: "2020",
+    title_2020: "RISE-Strategie",
+    desc_2020: "Intel startet die RISE-Strategie (Verantwortung, Inklusion, Nachhaltigkeit, Befähigung) und die Ziele für 2030, um branchenweite Fortschritte beim Klimaschutz, Wassermanagement und der Abfallreduzierung zu erzielen.",
+    year_2022: "2022",
+    title_2022: "Netto-Null bis 2040",
+    desc_2022: "Intel verpflichtet sich, bis 2040 Netto-Null-Emissionen (Scope 1 und 2) in den weltweiten Betrieben zu erreichen – aufbauend auf jahrelangen Umweltinitiativen.",
+    year_2023: "2023",
+    title_2023: "Erneuerbare Elektrizität",
+    desc_2023: "Das Unternehmen erreicht weltweit 99 % erneuerbare Elektrizität und senkt so die CO₂-Emissionen erheblich und treibt die Nachhaltigkeitsziele voran.",
+    year_2024: "2024",
+    title_2024: "Zukunftsvision",
+    desc_2024: "Intel setzt weiterhin auf Innovationen in der Nachhaltigkeit und strebt eine Führungsrolle beim Klimaschutz, der Wasserwiederherstellung und der Kreislaufwirtschaft an.",
+    col1_title: "RISE-Strategie",
+    col1_desc: "Mit der RISE-Strategie setzt Intel ehrgeizige Ziele für 2030, darunter Fortschritte beim Klimaschutz, Wassermanagement und Abfallreduzierung.",
+    col2_title: "Engagement",
+    col2_desc: "2022 verpflichtete sich Intel, bis 2040 Netto-Null-Emissionen (Scope 1 und 2) zu erreichen. Dieses Engagement baut auf jahrzehntelangen Umweltinitiativen und Partnerschaften auf.",
+    col3_title: "Wasser & Abfall",
+    col3_desc: "Intel spart jährlich Milliarden Liter Wasser und arbeitet mit lokalen Gemeinschaften an der Wiederherstellung von Wassereinzugsgebieten. Zudem werden Materialien recycelt, um Abfall zu reduzieren und die Kreislaufwirtschaft zu fördern.",
+    learn_more: "Mehr erfahren",
+    subscribe_title: "Newsletter abonnieren",
+    subscribe_btn: "Abonnieren",
+    modal_title: "Erfahren Sie mehr über Intels Nachhaltigkeitsprojekt und Leistungen.",
+    modal_subtitle: "Abonnieren Sie Neuigkeiten von INTEL",
+    modal_name: "Vorname",
+    modal_lastname: "Nachname",
+    modal_email: "E-Mail",
+    modal_email_invalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    modal_terms: "Ich stimme den Geschäftsbedingungen zu.",
+    modal_submit: "Absenden",
+    modal_thankyou: "Danke für Ihr Abonnement!"
+  },
+  ja: {
+    slogan: "時代を超えたサステナビリティ",
+    year_1968: "1968年",
+    title_1968: "インテル設立",
+    desc_1968: "ロバート・ノイスとゴードン・ムーアが新会社NM Electronicsをインテルに改名し、技術革新の基盤を築きました。",
+    year_1971: "1971年",
+    title_1971: "初のマイクロプロセッサ",
+    desc_1971: "インテルは世界初の商用マイクロプロセッサ4004を発表し、マイクロプロセッサ革命の火付け役となりました。",
+    year_1978: "1978年",
+    title_1978: "8086プロセッサ",
+    desc_1978: "8086プロセッサの登場により、現代のPCやサーバーを支えるx86アーキテクチャが確立されました。",
+    year_1985: "1985年",
+    title_1985: "386プロセッサ",
+    desc_1985: "インテルは32ビットアーキテクチャの386プロセッサを導入し、PCの性能とマルチタスク時代を切り開きました。",
+    year_2006: "2006年",
+    title_2006: "温室効果ガス排出量のピーク",
+    desc_2006: "この年、インテルの年間温室効果ガス排出量が最大となりました。その後、排出削減や再生可能エネルギー、効率的な製造への投資が進められました。",
+    year_2020: "2020年",
+    title_2020: "RISE戦略",
+    desc_2020: "インテルはRISE（責任・包摂・持続可能性・エンパワーメント）戦略と2030年目標を発表し、気候変動対策や水資源管理、廃棄物削減の業界全体の進展を目指します。",
+    year_2022: "2022年",
+    title_2022: "2040年までにネットゼロ",
+    desc_2022: "インテルは2040年までに世界中の事業で温室効果ガス排出量（スコープ1・2）をネットゼロにすることを約束しました。",
+    year_2023: "2023年",
+    title_2023: "再生可能エネルギー",
+    desc_2023: "同社は世界中で99％の再生可能電力を達成し、CO₂排出量の大幅削減と長期的な持続可能性目標の推進に貢献しています。",
+    year_2024: "2024年",
+    title_2024: "未来ビジョン",
+    desc_2024: "インテルは持続可能性のイノベーションを続け、気候変動対策や水資源回復、循環型経済の分野で業界をリードすることを目指します。",
+    col1_title: "RISE戦略",
+    col1_desc: "RISE戦略のもと、インテルは2030年に向けて気候変動対策や水資源管理、廃棄物削減など業界全体の進展を目指します。",
+    col2_title: "コミットメント",
+    col2_desc: "2022年、インテルは2040年までに温室効果ガス排出量（スコープ1・2）のネットゼロ達成を約束しました。これは長年の環境活動とパートナーシップに基づいています。",
+    col3_title: "水と廃棄物",
+    col3_desc: "インテルは毎年数十億ガロンの水を節約し、地域社会と協力して流域を回復しています。また、廃棄物削減と循環型経済の推進のためにリサイクルも行っています。",
+    learn_more: "詳細はこちら",
+    subscribe_title: "ニュースレターを購読する",
+    subscribe_btn: "購読する",
+    modal_title: "インテルのサステナビリティプロジェクトと実績について詳しく知る。",
+    modal_subtitle: "INTELのニュースを受け取るにはご登録ください",
+    modal_name: "名",
+    modal_lastname: "姓",
+    modal_email: "メールアドレス",
+    modal_email_invalid: "有効なメールアドレスを入力してください。",
+    modal_terms: "利用規約に同意します。",
+    modal_submit: "送信",
+    modal_thankyou: "ご購読ありがとうございます！"
+  }
+};
+</script>
+
+  <!-- Footer Section -->
+  <footer class="bg-light border-top mt-5 py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-2 mb-md-0 text-center text-md-start">
+        &copy; 2025 Intel Corporation. All rights reserved.
+      </div>
+      <nav aria-label="Footer Navigation">
+        <a href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html" class="text-decoration-none mx-2" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://www.intel.com/content/www/us/en/legal/terms-of-use.html" class="text-decoration-none mx-2" target="_blank" rel="noopener">Terms of Use</a>
+        <a href="https://www.intel.com/content/www/us/en/support/contact-us.html" class="text-decoration-none mx-2" target="_blank" rel="noopener">Contact</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
